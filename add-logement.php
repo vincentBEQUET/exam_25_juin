@@ -159,7 +159,7 @@ if (!empty($_POST)) {
 <html lang="en">
 
 <head>
-    <title>Formulaire</title>
+    <title>Add logement</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -174,9 +174,9 @@ if (!empty($_POST)) {
         <div class="row mt-3">
             <div class="col-12">
 
-                <a class="btn btn-primary btn-sm" href="index.php">Retour</a>
+                <a class="btn btn-primary btn-sm" href="list-logement.php">Retour</a>
 
-                <form action="add-produit.php" method="post" class="form" enctype="multipart/form-data">
+                <form action="add-logement.php" method="post" class="form" enctype="multipart/form-data">
 
                     <input name="titre" placeholder="titre" type="text" class="form-control">
                     <input name="adresse" placeholder="adresse" type="text" class="form-control">

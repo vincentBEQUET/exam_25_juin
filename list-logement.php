@@ -14,7 +14,7 @@ $logements = $response->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Liste logement</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -50,7 +50,7 @@ $logements = $response->fetchAll(PDO::FETCH_ASSOC);
                         <?php foreach ($logements as $l) : ?>
 
                             <tr>
-                                <td><?= $l['id'] ?></td>
+                                <td><?= $l['id_logement'] ?></td>
                                 <td><?= $l['titre'] ?></td>
                                 <td><?= $l['adresse'] ?></td>
                                 <td><?= $l['ville'] ?></td>
@@ -59,7 +59,14 @@ $logements = $response->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $l['prix'] ?></td>
                                 <td><img src="uploads/<?= $l['photo'] ?>" height="100"></td>
                                 <td><?= $l['type'] ?></td>
-                                <td><?= $l['description'] ?></td>
+                                <td><?php 
+                                    if(strlen( $l['description'])>10) {
+                                        echo ( substr( $l['description'], 0, 9) . '...');
+                                            } 
+                                    else {
+                                        echo( $l['description']);
+                                    }
+                            ?></td>
                             </tr>
 
                         <?php endforeach; ?>
